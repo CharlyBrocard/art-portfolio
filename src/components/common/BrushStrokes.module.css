@@ -1,0 +1,49 @@
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+  filter: blur(0.5px);
+}
+
+.stroke {
+  will-change: stroke-dashoffset, opacity;
+  transition: filter 0.3s ease;
+}
+
+/* Effet de texture sur les traits */
+.stroke:nth-child(odd) {
+  filter: url(#brush-texture);
+}
+
+/* Mobile - simplifier */
+@media (max-width: 768px) {
+  .svg {
+    filter: blur(1px);
+  }
+
+  /* Cacher certains traits sur mobile */
+  .stroke:nth-child(4),
+  .stroke:nth-child(5),
+  .stroke:nth-child(6) {
+    display: none;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .stroke {
+    stroke-dasharray: none !important;
+    stroke-dashoffset: 0 !important;
+    opacity: 0.4 !important;
+  }
+}

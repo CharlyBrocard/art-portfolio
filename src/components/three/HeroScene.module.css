@@ -1,0 +1,27 @@
+.sceneContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Prevent touch scrolling on canvas */
+.sceneContainer canvas {
+  touch-action: none;
+}
+
+/* Reduce complexity on smaller screens */
+@media (max-width: 768px) {
+  .sceneContainer {
+    opacity: 0.8; /* Slightly reduce visual complexity */
+  }
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .sceneContainer {
+    display: none;
+  }
+}

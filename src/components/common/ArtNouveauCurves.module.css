@@ -1,0 +1,41 @@
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+}
+
+.curve {
+  will-change: stroke-dashoffset, opacity;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
+}
+
+/* Mobile - simplifier */
+@media (max-width: 768px) {
+  /* Cacher les courbes complexes sur mobile */
+  .curve:nth-child(3),
+  .curve:nth-child(5),
+  .curve:nth-child(7),
+  .curve:nth-child(8) {
+    display: none;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .curve {
+    stroke-dasharray: none !important;
+    stroke-dashoffset: 0 !important;
+    opacity: 0.3 !important;
+    animation: none !important;
+  }
+}

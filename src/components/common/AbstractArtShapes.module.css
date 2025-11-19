@@ -1,0 +1,129 @@
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.shape {
+  position: absolute;
+  filter: blur(1px);
+  will-change: transform;
+  transition: filter 0.3s ease;
+}
+
+.shape:hover {
+  filter: blur(0px);
+}
+
+/* Positionnement des formes */
+.shape1 {
+  width: 280px;
+  height: 280px;
+  top: 10%;
+  right: 15%;
+}
+
+.shape2 {
+  width: 220px;
+  height: 220px;
+  top: 50%;
+  left: 10%;
+}
+
+.shape3 {
+  width: 180px;
+  height: 180px;
+  top: 25%;
+  left: 20%;
+}
+
+.shape4 {
+  width: 200px;
+  height: 200px;
+  bottom: 20%;
+  right: 25%;
+}
+
+.shape5 {
+  width: 160px;
+  height: 160px;
+  top: 65%;
+  right: 12%;
+}
+
+.shape6 {
+  width: 240px;
+  height: 240px;
+  top: 35%;
+  right: 35%;
+}
+
+/* Animations CSS de secours */
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translate(10px, -15px) rotate(5deg) scale(1.05);
+  }
+  50% {
+    transform: translate(-5px, -25px) rotate(-3deg) scale(1.08);
+  }
+  75% {
+    transform: translate(-15px, -10px) rotate(8deg) scale(1.05);
+  }
+}
+
+/* Mobile - réduire le nombre et la taille des formes */
+@media (max-width: 768px) {
+  .shape1 {
+    width: 180px;
+    height: 180px;
+    top: 15%;
+    right: 10%;
+  }
+
+  .shape2 {
+    width: 140px;
+    height: 140px;
+    top: 55%;
+    left: 5%;
+  }
+
+  .shape3 {
+    display: none;
+  }
+
+  .shape4 {
+    width: 120px;
+    height: 120px;
+    bottom: 15%;
+    right: 15%;
+  }
+
+  .shape5 {
+    display: none;
+  }
+
+  .shape6 {
+    width: 150px;
+    height: 150px;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .shape {
+    animation: none;
+    transform: none !important;
+  }
+}

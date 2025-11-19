@@ -1,0 +1,254 @@
+.cardContainer {
+  perspective: 1000px;
+  width: 100%;
+  max-width: 400px;
+  cursor: pointer;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.cardFront,
+.cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(212, 165, 154, 0.25);
+  transition: box-shadow 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.card:hover .cardFront,
+.card:hover .cardBack {
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.20),
+    0 0 0 2px rgba(212, 165, 154, 0.5),
+    0 0 30px rgba(212, 165, 154, 0.15);
+}
+
+/* Recto - Image */
+.cardFront {
+  background-color: var(--color-bg-secondary);
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 85%;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.cardContainer:hover .image {
+  transform: scale(1.08);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: var(--spacing-sm);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.category {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 20px;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.frontTitle {
+  padding: var(--spacing-sm) var(--spacing-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 15%;
+}
+
+.frontTitle h3 {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.year {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  flex-shrink: 0;
+  margin-left: var(--spacing-sm);
+}
+
+/* Verso - Description */
+.cardBack {
+  background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg-tertiary) 100%);
+  transform: rotateY(180deg);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.cardBack::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 1px solid rgba(212, 165, 154, 0.3);
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.backContent {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.backTitle {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-terracotta);
+  font-family: var(--font-primary);
+  letter-spacing: 0.02em;
+}
+
+.backCategory {
+  display: inline-block;
+  background: linear-gradient(135deg, rgba(212, 165, 154, 0.20), rgba(168, 184, 156, 0.20));
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 2px;
+  font-size: var(--font-size-sm);
+  color: var(--color-forest);
+  align-self: flex-start;
+  font-family: var(--font-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+}
+
+.description {
+  flex: 1;
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  overflow-y: auto;
+  margin: var(--spacing-sm) 0;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.detailItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--font-size-sm);
+}
+
+.detailLabel {
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.detailValue {
+  color: var(--color-text-primary);
+  text-align: right;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .cardContainer {
+    max-width: 100%;
+  }
+
+  .frontTitle h3 {
+    font-size: var(--font-size-base);
+  }
+
+  .backTitle {
+    font-size: var(--font-size-lg);
+  }
+
+  .description {
+    font-size: var(--font-size-sm);
+  }
+}
+
+/* Disable 3D transform on reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: opacity 0.3s ease;
+  }
+
+  .card.flipped .cardFront {
+    opacity: 0;
+  }
+
+  .card.flipped .cardBack {
+    opacity: 1;
+  }
+
+  .cardBack {
+    opacity: 0;
+    transform: none;
+  }
+}
+
+/* Custom scrollbar for description */
+.description::-webkit-scrollbar {
+  width: 4px;
+}
+
+.description::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.description::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+}
+
+.description::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
