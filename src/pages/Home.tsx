@@ -2,8 +2,6 @@ import { motion } from 'framer-motion'
 import { useScrollAnimations } from '@hooks/useScrollAnimations'
 import ArtworkCard from '@components/gallery/ArtworkCard'
 import Ornament from '@components/common/Ornament'
-import AbstractArtShapes from '@components/common/AbstractArtShapes'
-import BrushStrokes from '@components/common/BrushStrokes'
 import ArtNouveauCurves from '@components/common/ArtNouveauCurves'
 import BotanicalBranch from '@components/common/BotanicalBranch'
 import { artworks } from '@/data/artworks'
@@ -16,9 +14,7 @@ const Home = () => {
     <div className={styles.home}>
       {/* Hero Section */}
       <section id="hero" className={styles.hero}>
-        <BrushStrokes />
         <ArtNouveauCurves />
-        <AbstractArtShapes />
         <Ornament position="top-left" type="corner" />
         <Ornament position="top-right" type="corner" />
         <div className={styles.heroContent}>

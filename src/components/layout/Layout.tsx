@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 import Header from './Header'
 import Footer from './Footer'
+import ScrollToTop from '@components/common/ScrollToTop'
 import styles from './Layout.module.css'
 
 interface LayoutProps {
@@ -13,6 +14,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Header />
       <main className={styles.main}>{children}</main>
       <Footer />
+      <ScrollToTop />
     </div>
   )
 }

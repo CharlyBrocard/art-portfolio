@@ -1,11 +1,11 @@
 import { useEffect } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
-import { useSmoothScroll } from '@hooks/useSmoothScroll'
+import { useLenisScroll } from '@hooks/useLenisScroll'
 import Layout from '@components/layout/Layout'
 import Home from '@pages/Home'
 
 function AppContent() {
-  useSmoothScroll()
+  useLenisScroll()
 
   // Protection anti-screenshot (rend plus difficile mais pas impossible)
   useEffect(() => {

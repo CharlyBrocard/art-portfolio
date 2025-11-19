@@ -1,0 +1,85 @@
+.scrollToTop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-terracotta), var(--color-copper));
+  color: var(--color-bg-primary);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  box-shadow:
+    0 4px 20px rgba(212, 165, 154, 0.4),
+    0 0 0 3px var(--color-bg-primary),
+    0 0 0 5px rgba(212, 165, 154, 0.3);
+  transition: all var(--transition-fast);
+  backdrop-filter: blur(10px);
+}
+
+.scrollToTop:hover {
+  box-shadow:
+    0 6px 25px rgba(212, 165, 154, 0.5),
+    0 0 0 3px var(--color-bg-primary),
+    0 0 0 5px rgba(212, 165, 154, 0.4);
+  background: linear-gradient(135deg, var(--color-copper), var(--color-terracotta));
+}
+
+.scrollToTop:active {
+  transform: scale(0.95);
+}
+
+.arrow {
+  width: 24px;
+  height: 24px;
+  transition: transform var(--transition-fast);
+}
+
+.scrollToTop:hover .arrow {
+  transform: translateY(-2px);
+}
+
+/* Animation au scroll */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.scrollToTop:hover .arrow {
+  animation: bounce 1s ease-in-out infinite;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .scrollToTop {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 48px;
+    height: 48px;
+  }
+
+  .arrow {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Accessibilité */
+@media (prefers-reduced-motion: reduce) {
+  .scrollToTop {
+    transition: none;
+  }
+
+  .arrow {
+    animation: none !important;
+  }
+}

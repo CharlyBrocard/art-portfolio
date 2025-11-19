@@ -28,18 +28,18 @@ const ArtNouveauCurves = () => {
         delay: 1 + index * 0.3,
       })
 
-      // Animation d'opacité
+      // Animation d'opacité plus subtile
       gsap.to(path, {
-        opacity: 0.4,
+        opacity: 0.15,
         duration: 2,
         ease: 'power1.inOut',
         delay: 1 + index * 0.3,
       })
 
-      // Animation de pulsation subtile après le dessin
+      // Animation de pulsation très subtile après le dessin
       gsap.to(path, {
-        opacity: 0.5,
-        duration: 4,
+        opacity: 0.20,
+        duration: 5,
         ease: 'sine.inOut',
         repeat: -1,
         yoyo: true,
