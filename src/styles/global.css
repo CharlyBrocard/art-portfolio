@@ -1,42 +1,63 @@
+/* Import modern fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
 :root {
-  /* Colors - Art Nouveau Palette (naturelle et organique) - Thème Clair */
-  --color-bg-primary: #FAF8F3;
-  --color-bg-secondary: #F5EFE7;
-  --color-bg-tertiary: #EDE5DC;
-  --color-text-primary: #3D3027;
-  --color-text-secondary: #6B5D52;
+  /* Colors - Modern Minimal Palette */
+  --color-bg-primary: #FAFAF9;
+  --color-bg-secondary: #F5F5F4;
+  --color-bg-tertiary: #E7E5E4;
+  --color-text-primary: #0A0A0A;
+  --color-text-secondary: #57534E;
+  --color-text-tertiary: #A8A29E;
 
-  /* Accents naturels doux */
-  --color-terracotta: #D4A59A;
-  --color-copper: #C9A08A;
-  --color-sage: #A8B89C;
-  --color-forest: #7A8C6F;
-  --color-rose: #D4A5A5;
-  --color-coral: #E9B5A0;
+  /* Accents modernes */
+  --color-accent-primary: #E9B5A0;
+  --color-accent-secondary: #7A8C6F;
+  --color-accent-hover: #D4A59A;
 
-  /* Couleurs principales */
-  --color-accent: var(--color-terracotta);
-  --color-accent-hover: #C89588;
-  --color-accent-secondary: var(--color-sage);
-
-  /* Spacing */
+  /* Spacing - Mobile first */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
-  --spacing-md: 2rem;
-  --spacing-lg: 4rem;
-  --spacing-xl: 8rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 3rem;
+  --spacing-xl: 5rem;
+  --spacing-2xl: 8rem;
+  --spacing-3xl: 12rem;
 
-  /* Typography - Art Nouveau elegant */
-  --font-primary: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
-  --font-secondary: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-decorative: 'Cinzel Decorative', cursive;
+  /* Container */
+  --container-padding: 1.5rem;
+  --container-max-width: 1400px;
 
+  /* Typography - Modern Display */
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Playfair Display', Georgia, serif;
+
+  /* Font sizes - Responsive */
+  --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
-  --font-size-lg: 1.25rem;
-  --font-size-xl: 1.5rem;
-  --font-size-2xl: 2rem;
-  --font-size-3xl: 3rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.5rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 4rem;
+  --font-size-7xl: 5rem;
+  --font-size-8xl: 6rem;
+
+  /* Font weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+
+  /* Letter spacing */
+  --letter-spacing-tight: -0.05em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025em;
 
   /* Z-index layers */
   --z-base: 1;
@@ -45,9 +66,15 @@
   --z-tooltip: 2000;
 
   /* Transitions */
-  --transition-fast: 0.2s ease;
-  --transition-base: 0.3s ease;
-  --transition-slow: 0.5s ease;
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.3s cubic-bezier(0.37, 0, 0.63, 1);
+  --transition-slow: 0.5s cubic-bezier(0.37, 0, 0.63, 1);
+
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
 }
 
 /* Reset & Base Styles */
@@ -88,11 +115,12 @@ html.lenis body {
 }
 
 body {
-  font-family: var(--font-primary);
+  font-family: var(--font-display);
   background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
-  line-height: 1.6;
+  line-height: 1.5;
   overflow-x: hidden;
+  font-weight: var(--font-weight-normal);
   /* Protection anti-sélection */
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -129,21 +157,32 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 600;
-  line-height: 1.2;
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.1;
   margin-bottom: var(--spacing-sm);
+  letter-spacing: var(--letter-spacing-tight);
 }
 
 h1 {
-  font-size: var(--font-size-3xl);
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-black);
 }
 
 h2 {
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-extrabold);
 }
 
 h3 {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+}
+
+p {
+  font-family: var(--font-body);
+  line-height: 1.7;
+  font-size: var(--font-size-base);
 }
 
 a {
@@ -183,7 +222,7 @@ button {
 }
 
 button:focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-accent-primary);
   outline-offset: 2px;
 }
 
@@ -200,13 +239,13 @@ button:focus-visible {
 
 /* Focus visible for keyboard navigation */
 :focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-accent-primary);
   outline-offset: 2px;
 }
 
 /* Selection */
 ::selection {
-  background-color: var(--color-accent);
+  background-color: var(--color-accent-primary);
   color: var(--color-bg-primary);
 }
 
@@ -221,15 +260,15 @@ button:focus-visible {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-sage);
+  background: var(--color-text-tertiary);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-terracotta);
+  background: var(--color-accent-primary);
 }
 
-/* Mobile optimization */
+/* Responsive Typography & Spacing */
 @media (max-width: 768px) {
   html {
     font-size: 14px;
@@ -237,7 +276,36 @@ button:focus-visible {
 
   :root {
     --spacing-lg: 2rem;
-    --spacing-xl: 4rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 4rem;
+    --spacing-3xl: 6rem;
+    --container-padding: 1rem;
+
+    --font-size-5xl: 2.5rem;
+    --font-size-6xl: 3rem;
+    --font-size-7xl: 3.5rem;
+    --font-size-8xl: 4rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  :root {
+    --container-padding: 2rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  :root {
+    --container-padding: 3rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  :root {
+    --font-size-5xl: 3.5rem;
+    --font-size-6xl: 4.5rem;
+    --font-size-7xl: 6rem;
+    --font-size-8xl: 7rem;
   }
 }
 

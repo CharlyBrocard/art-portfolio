@@ -5,9 +5,10 @@ import styles from './ArtworkCard.module.css'
 
 interface ArtworkCardProps {
   artwork: Artwork
+  index?: number
 }
 
-const ArtworkCard = ({ artwork }: ArtworkCardProps) => {
+const ArtworkCard = ({ artwork, index }: ArtworkCardProps) => {
   const [isFlipped, setIsFlipped] = useState(false)
 
   const categoryLabels = {
@@ -35,12 +36,19 @@ const ArtworkCard = ({ artwork }: ArtworkCardProps) => {
               watermarkText={`© ${artwork.year}`}
             />
             <div className={styles.overlay}>
-              <span className={styles.category}>{categoryLabels[artwork.category]}</span>
+              {index !== undefined && (
+                <span className={styles.artworkNumber}>
+                  {String(index + 1).padStart(3, '0')}
+                </span>
+              )}
+              <div className={styles.overlayBottom}>
+                <span className={styles.category}>{categoryLabels[artwork.category]}</span>
+                <div className={styles.frontTitle}>
+                  <h3>{artwork.title}</h3>
+                  <span className={styles.year}>{artwork.year}</span>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className={styles.frontTitle}>
-            <h3>{artwork.title}</h3>
-            <span className={styles.year}>{artwork.year}</span>
           </div>
         </div>
 

@@ -1,16 +1,16 @@
 .cardContainer {
   perspective: 1000px;
   width: 100%;
-  max-width: 400px;
+  height: 100%;
   cursor: pointer;
 }
 
 .card {
   position: relative;
   width: 100%;
-  aspect-ratio: 3 / 4;
+  height: 100%;
   transform-style: preserve-3d;
-  transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: transform 0.6s cubic-bezier(0.37, 0, 0.63, 1);
   will-change: transform;
 }
 
@@ -24,33 +24,27 @@
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  border-radius: 4px;
+  border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow:
-    0 10px 40px rgba(0, 0, 0, 0.15),
-    0 0 0 1px rgba(212, 165, 154, 0.25);
-  transition: box-shadow 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  border: 2px solid transparent;
-  background-clip: padding-box;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: box-shadow var(--transition-base);
+  background: var(--color-bg-primary);
 }
 
 .card:hover .cardFront,
 .card:hover .cardBack {
-  box-shadow:
-    0 20px 60px rgba(0, 0, 0, 0.20),
-    0 0 0 2px rgba(212, 165, 154, 0.5),
-    0 0 30px rgba(212, 165, 154, 0.15);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
 /* Recto - Image */
 .cardFront {
-  background-color: var(--color-bg-secondary);
+  background-color: var(--color-bg-primary);
 }
 
 .imageContainer {
   position: relative;
   width: 100%;
-  height: 85%;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -58,11 +52,11 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: transform 0.6s cubic-bezier(0.37, 0, 0.63, 1);
 }
 
 .cardContainer:hover .image {
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
 .overlay {
@@ -70,148 +64,166 @@
   top: 0;
   left: 0;
   right: 0;
-  padding: var(--spacing-sm);
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
+  bottom: 0;
+  padding: var(--spacing-md);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 50%);
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--spacing-xs);
+}
+
+.artworkNumber {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-extrabold);
+  color: white;
+  letter-spacing: var(--letter-spacing-wide);
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  align-self: flex-start;
+}
+
+.overlayBottom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
 }
 
 .category {
-  background-color: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
-  padding: var(--spacing-xs) var(--spacing-sm);
-  border-radius: 20px;
-  font-size: var(--font-size-sm);
-  font-weight: 500;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  font-family: var(--font-display);
+  align-self: flex-start;
 }
 
 .frontTitle {
-  padding: var(--spacing-sm) var(--spacing-md);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 15%;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .frontTitle h3 {
-  font-size: var(--font-size-lg);
-  font-weight: 600;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
   margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  color: white;
+  font-family: var(--font-display);
+  letter-spacing: var(--letter-spacing-tight);
 }
 
 .year {
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-sm);
-  flex-shrink: 0;
-  margin-left: var(--spacing-sm);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: var(--font-size-xs);
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-medium);
 }
 
 /* Verso - Description */
 .cardBack {
-  background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg-tertiary) 100%);
+  background: var(--color-bg-primary);
   transform: rotateY(180deg);
-  padding: var(--spacing-md);
+  padding: var(--spacing-lg);
   display: flex;
   flex-direction: column;
   position: relative;
-}
-
-.cardBack::before {
-  content: '';
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
-  border: 1px solid rgba(212, 165, 154, 0.3);
-  border-radius: 2px;
-  pointer-events: none;
 }
 
 .backContent {
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-sm);
+  gap: var(--spacing-md);
 }
 
 .backTitle {
-  font-size: var(--font-size-xl);
-  font-weight: 600;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
   margin: 0;
-  color: var(--color-terracotta);
-  font-family: var(--font-primary);
-  letter-spacing: 0.02em;
+  color: var(--color-text-primary);
+  font-family: var(--font-display);
+  letter-spacing: var(--letter-spacing-tight);
+  text-transform: uppercase;
 }
 
 .backCategory {
   display: inline-block;
-  background: linear-gradient(135deg, rgba(212, 165, 154, 0.20), rgba(168, 184, 156, 0.20));
-  padding: var(--spacing-xs) var(--spacing-sm);
-  border-radius: 2px;
-  font-size: var(--font-size-sm);
-  color: var(--color-forest);
+  background: var(--color-bg-tertiary);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-primary);
   align-self: flex-start;
-  font-family: var(--font-secondary);
+  font-family: var(--font-display);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: 500;
+  letter-spacing: var(--letter-spacing-wide);
+  font-weight: var(--font-weight-bold);
 }
 
 .description {
   flex: 1;
-  font-size: var(--font-size-base);
-  line-height: 1.6;
+  font-size: var(--font-size-sm);
+  line-height: 1.7;
   color: var(--color-text-secondary);
   overflow-y: auto;
-  margin: var(--spacing-sm) 0;
+  font-family: var(--font-body);
 }
 
 .details {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xs);
-  padding-top: var(--spacing-sm);
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-bg-tertiary);
 }
 
 .detailItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
+  font-family: var(--font-display);
 }
 
 .detailLabel {
-  color: var(--color-text-secondary);
-  font-weight: 500;
+  color: var(--color-text-tertiary);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
 }
 
 .detailValue {
   color: var(--color-text-primary);
   text-align: right;
+  font-weight: var(--font-weight-medium);
 }
 
 /* Mobile optimizations */
 @media (max-width: 768px) {
-  .cardContainer {
-    max-width: 100%;
+  .cardBack {
+    padding: var(--spacing-md);
   }
 
   .frontTitle h3 {
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-sm);
   }
 
   .backTitle {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-base);
   }
 
   .description {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xs);
   }
 }
 

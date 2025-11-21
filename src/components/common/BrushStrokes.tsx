@@ -30,7 +30,7 @@ const BrushStrokes = () => {
 
       // Animation d'opacité et de largeur pour effet de pinceau
       gsap.to(path, {
-        opacity: 0.6,
+        opacity: 0.5,
         duration: 1.5,
         ease: 'power1.inOut',
         delay: 0.5 + index * 0.4,
@@ -41,68 +41,90 @@ const BrushStrokes = () => {
   return (
     <div ref={containerRef} className={styles.container}>
       <svg className={styles.svg} viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
-        {/* Coup de pinceau 1 - Terracotta - horizontal fluide */}
+        {/* Trait 1 - Diagonal montant (bas gauche vers haut droit) */}
         <path
           className={styles.stroke}
-          d="M 50 150 Q 200 140, 350 160 Q 500 180, 650 155 Q 800 130, 900 150"
+          d="M 50 650 Q 200 500, 350 380 Q 500 280, 620 200"
           fill="none"
-          stroke="var(--color-terracotta)"
-          strokeWidth="25"
+          stroke="var(--color-accent-primary)"
+          strokeWidth="8"
           strokeLinecap="round"
           opacity="0"
         />
 
-        {/* Coup de pinceau 2 - Sage - courbe douce */}
+        {/* Trait 2 - Vertical avec courbe (gauche) */}
         <path
           className={styles.stroke}
-          d="M 200 400 Q 350 350, 500 380 Q 650 410, 850 370"
+          d="M 180 100 Q 160 250, 200 400 Q 220 550, 180 680"
           fill="none"
-          stroke="var(--color-sage)"
-          strokeWidth="20"
+          stroke="var(--color-accent-secondary)"
+          strokeWidth="6"
           strokeLinecap="round"
           opacity="0"
         />
 
-        {/* Coup de pinceau 3 - Copper - diagonal expressif */}
+        {/* Trait 3 - Diagonal descendant court (haut droit vers bas gauche) */}
         <path
           className={styles.stroke}
-          d="M 100 600 Q 300 550, 450 580 Q 600 610, 750 570 Q 900 530, 1050 560"
+          d="M 900 150 Q 800 230, 720 320"
           fill="none"
-          stroke="var(--color-copper)"
-          strokeWidth="30"
+          stroke="var(--color-accent-primary)"
+          strokeWidth="10"
           strokeLinecap="round"
           opacity="0"
         />
 
-        {/* Coup de pinceau 4 - Rose - petit accent */}
+        {/* Trait 4 - Courbe en S horizontal */}
         <path
           className={styles.stroke}
-          d="M 800 250 Q 900 230, 1000 255 Q 1100 280, 1150 260"
+          d="M 300 250 Q 450 220, 550 260 Q 650 300, 750 270"
           fill="none"
-          stroke="var(--color-rose)"
-          strokeWidth="18"
+          stroke="var(--color-accent-secondary)"
+          strokeWidth="5"
           strokeLinecap="round"
           opacity="0"
         />
 
-        {/* Coup de pinceau 5 - Coral - courbe verticale */}
+        {/* Trait 5 - Vertical ondulé (droite) */}
         <path
           className={styles.stroke}
-          d="M 950 100 Q 930 200, 960 300 Q 990 400, 970 500"
+          d="M 1050 200 Q 1020 350, 1060 480 Q 1080 600, 1040 720"
           fill="none"
-          stroke="var(--color-coral)"
-          strokeWidth="22"
+          stroke="var(--color-accent-primary)"
+          strokeWidth="7"
           strokeLinecap="round"
           opacity="0"
         />
 
-        {/* Coup de pinceau 6 - Forest - trait fin et long */}
+        {/* Trait 6 - Diagonal montant énergique */}
         <path
           className={styles.stroke}
-          d="M 150 300 Q 400 280, 600 310 Q 800 340, 1000 320"
+          d="M 400 700 Q 550 580, 680 480 Q 820 370, 950 280"
           fill="none"
-          stroke="var(--color-forest)"
-          strokeWidth="15"
+          stroke="var(--color-accent-secondary)"
+          strokeWidth="9"
+          strokeLinecap="round"
+          opacity="0"
+        />
+
+        {/* Trait 7 - Court diagonal (accent) */}
+        <path
+          className={styles.stroke}
+          d="M 700 500 Q 780 560, 850 620"
+          fill="none"
+          stroke="var(--color-accent-primary)"
+          strokeWidth="8"
+          strokeLinecap="round"
+          opacity="0"
+        />
+
+        {/* Trait 8 - Vertical court (centre) */}
+        <path
+          className={styles.stroke}
+          d="M 600 150 Q 580 280, 620 400"
+          fill="none"
+          stroke="var(--color-accent-secondary)"
+          strokeWidth="4"
           strokeLinecap="round"
           opacity="0"
         />
