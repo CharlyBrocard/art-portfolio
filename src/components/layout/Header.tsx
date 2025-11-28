@@ -24,7 +24,9 @@ const Header = () => {
 
   const navLinks = [
     { to: '#hero', label: 'Accueil' },
-    { to: '#artworks', label: 'Œuvres' },
+    { to: '#character-design', label: 'Character Design' },
+    { to: '#comic', label: 'BD' },
+    { to: '#tattoo', label: 'Tatouage' },
     { to: '#about', label: 'À propos' },
   ]
 

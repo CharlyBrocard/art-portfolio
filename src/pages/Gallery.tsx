@@ -8,10 +8,9 @@ const Gallery = () => {
 
   const categories: Array<{ value: ArtworkCategory | 'all'; label: string }> = [
     { value: 'all', label: 'Tout' },
-    { value: 'painting', label: 'Peintures' },
-    { value: 'watercolor', label: 'Aquarelles' },
-    { value: 'sculpture', label: 'Sculptures' },
     { value: 'character-design', label: 'Character Design' },
+    { value: 'comic', label: 'Bande Dessinée' },
+    { value: 'tattoo', label: 'Tatouage' },
   ]
 
   return (

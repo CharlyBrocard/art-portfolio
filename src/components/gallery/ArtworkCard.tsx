@@ -12,15 +12,20 @@ const ArtworkCard = ({ artwork, index }: ArtworkCardProps) => {
   const [isFlipped, setIsFlipped] = useState(false)
 
   const categoryLabels = {
-    painting: 'Peinture',
-    watercolor: 'Aquarelle',
-    sculpture: 'Sculpture',
     'character-design': 'Character Design',
+    comic: 'Bande Dessinée',
+    tattoo: 'Tatouage',
   }
+
+  const categoryClass = {
+    'character-design': styles.characterDesignCard,
+    comic: styles.comicCard,
+    tattoo: styles.tattooCard,
+  }[artwork.category]
 
   return (
     <div
-      className={styles.cardContainer}
+      className={`${styles.cardContainer} ${categoryClass}`}
       onMouseEnter={() => setIsFlipped(true)}
       onMouseLeave={() => setIsFlipped(false)}
       onClick={() => setIsFlipped(!isFlipped)}

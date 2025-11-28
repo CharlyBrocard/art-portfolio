@@ -1,4 +1,4 @@
-export type ArtworkCategory = 'painting' | 'watercolor' | 'sculpture' | 'character-design'
+export type ArtworkCategory = 'character-design' | 'comic' | 'tattoo'
 
 export interface Artwork {
   id: string

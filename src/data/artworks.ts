@@ -5,116 +5,177 @@ import type { Artwork } from '@/types'
  */
 
 export const artworks: Artwork[] = [
+  // Character Design
   {
     id: '1',
-    title: 'Rêverie Nocturne',
-    category: 'painting',
+    title: 'Kira - Chasseuse Céleste',
+    category: 'character-design',
     description:
-      "Une exploration des émotions du crépuscule, où les couleurs chaudes se mêlent aux ombres de la nuit. Cette pièce capture l'essence de la transition entre le jour et la nuit, un moment de contemplation.",
-    imageUrl: 'https://images.unsplash.com/photo-1578301978162-7aae4d755744?w=800&h=1000&fit=crop',
+      "Concept pour un RPG fantasy. Kira est une archère nomade qui tire son pouvoir des constellations. Design inspiré des armures mongoles avec des motifs célestes luminescents. Palette : bleus nuit, or et blanc.",
+    imageUrl: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1000&fit=crop',
     thumbnailUrl:
-      'https://images.unsplash.com/photo-1578301978162-7aae4d755744?w=400&h=500&fit=crop',
+      'https://images.unsplash.com/photo-1578632767115-351597cf2477?w=400&h=500&fit=crop',
     year: 2024,
-    dimensions: '100x80 cm',
-    materials: ['Huile sur toile'],
+    dimensions: '3000x4000px',
+    materials: ['Procreate', 'Photoshop', 'Concept Art'],
     featured: true,
   },
   {
     id: '2',
-    title: "L'Éveil des Vagues",
-    category: 'watercolor',
+    title: 'Nyx - Mage de l\'Ombre',
+    category: 'character-design',
     description:
-      "L'océan dans toute sa splendeur, capturé à l'aquarelle. Les nuances de bleu dansent sur le papier, évoquant le mouvement perpétuel des vagues et la puissance tranquille de la mer.",
-    imageUrl: 'https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=800&h=1000&fit=crop',
+      "Antagoniste principal d'une série animée. Nyx manipule les ténèbres et les illusions. Silhouette élancée, cape fluide, masque vénitien. Contraste fort entre zones sombres et éclats violets.",
+    imageUrl: 'https://images.unsplash.com/photo-1601513445506-2ab0d4fb4229?w=800&h=1000&fit=crop',
     thumbnailUrl:
-      'https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=400&h=500&fit=crop',
+      'https://images.unsplash.com/photo-1601513445506-2ab0d4fb4229?w=400&h=500&fit=crop',
     year: 2024,
-    dimensions: '40x30 cm',
-    materials: ['Aquarelle', 'Papier Arches 300g'],
+    dimensions: '2500x3500px',
+    materials: ['Clip Studio Paint', 'Character Sheet'],
     featured: true,
   },
   {
     id: '3',
-    title: 'Forme Organique',
-    category: 'sculpture',
-    description:
-      "Une sculpture contemporaine qui explore la relation entre la forme naturelle et l'abstraction. Inspirée par les courbes fluides de la nature, cette pièce invite à la contemplation tactile et visuelle.",
-    imageUrl: 'https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800&h=1000&fit=crop',
-    thumbnailUrl:
-      'https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=400&h=500&fit=crop',
-    year: 2023,
-    dimensions: '50x35x30 cm',
-    materials: ['Grès', 'Émaillage céladon'],
-    featured: false,
-  },
-  {
-    id: '4',
-    title: 'Gardienne des Forêts',
+    title: 'Zephyr - Mécanicien Cyberpunk',
     category: 'character-design',
     description:
-      "Personnage créé pour un univers fantastique. Cette gardienne mystérieuse veille sur les secrets de la forêt ancienne. Design mêlant éléments naturels et touches magiques.",
-    imageUrl: 'https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=800&h=1000&fit=crop',
+      "Design pour jeu vidéo cyberpunk. Mécanicien underground avec prothèses bioniques custom. Style streetwear futuriste, néons orange et cyan, détails techniques. Multiple variations : casual, combat, workshop.",
+    imageUrl: 'https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=800&h=1000&fit=crop',
     thumbnailUrl:
-      'https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=400&h=500&fit=crop',
+      'https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=400&h=500&fit=crop',
     year: 2024,
-    dimensions: 'Digital',
-    materials: ['Illustration numérique', 'Procreate'],
+    dimensions: '3500x4500px',
+    materials: ['Photoshop', 'Blender (prothèses 3D)', 'Keyshot'],
     featured: true,
   },
   {
-    id: '5',
-    title: 'Horizons Infinis',
-    category: 'painting',
+    id: '4',
+    title: 'Lumina - Esprit Gardien',
+    category: 'character-design',
     description:
-      "Un paysage abstrait qui évoque l'immensité et la liberté. Les couches de peinture créent une profondeur qui invite le regard à se perdre dans ces horizons imaginaires.",
-    imageUrl: 'https://images.unsplash.com/photo-1549887534-1541e9326642?w=800&h=1000&fit=crop',
+      "Créature éthérée pour projet narratif. Gardienne de sanctuaire ancien, forme semi-transparente, inspiration méduse/plante bioluminescente. Mouvements fluides, palette jade et or pâle.",
+    imageUrl: 'https://images.unsplash.com/photo-1620503374956-c942862f0372?w=800&h=1000&fit=crop',
     thumbnailUrl:
-      'https://images.unsplash.com/photo-1549887534-1541e9326642?w=400&h=500&fit=crop',
+      'https://images.unsplash.com/photo-1620503374956-c942862f0372?w=400&h=500&fit=crop',
+    year: 2023,
+    dimensions: '2800x3800px',
+    materials: ['Procreate', 'After Effects (tests animation)'],
+    featured: false,
+  },
+
+  // Bande Dessinée
+  {
+    id: '5',
+    title: 'Les Chroniques de Luna - Planche 1',
+    category: 'comic',
+    description:
+      "Première planche d'une série BD fantasy. Luna découvre un monde parallèle caché dans les ombres de la ville. Encrage traditionnel et colorisation numérique.",
+    imageUrl: 'https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1000&fit=crop',
+    thumbnailUrl:
+      'https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=400&h=500&fit=crop',
     year: 2024,
-    dimensions: '120x90 cm',
-    materials: ['Acrylique sur toile'],
+    dimensions: 'A4',
+    materials: ['Encre de Chine', 'Colorisation numérique'],
     featured: true,
   },
   {
     id: '6',
-    title: 'Fleurs Éphémères',
-    category: 'watercolor',
+    title: 'Rêves Urbains - Page 5',
+    category: 'comic',
     description:
-      "Étude botanique à l'aquarelle célébrant la beauté fragile des fleurs sauvages. Chaque pétale est une méditation sur l'impermanence et la délicatesse de la nature.",
-    imageUrl: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&h=1000&fit=crop',
+      "Extrait d'une histoire courte sur la vie nocturne en métropole. Jeux de lumières et d'ombres pour capturer l'atmosphère unique de la nuit en ville.",
+    imageUrl: 'https://images.unsplash.com/photo-1618519764620-7403abdbdfe9?w=800&h=1000&fit=crop',
     thumbnailUrl:
-      'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=500&fit=crop',
-    year: 2023,
-    dimensions: '35x25 cm',
-    materials: ['Aquarelle', 'Encre de Chine'],
-    featured: false,
+      'https://images.unsplash.com/photo-1618519764620-7403abdbdfe9?w=400&h=500&fit=crop',
+    year: 2024,
+    dimensions: 'A4',
+    materials: ['Aquarelle', 'Encre', 'Retouches numériques'],
+    featured: true,
   },
   {
     id: '7',
-    title: 'Équilibre Fragile',
-    category: 'sculpture',
+    title: 'Le Dernier Voyageur - Cover',
+    category: 'comic',
     description:
-      "Cette sculpture joue sur la notion d'équilibre et de tension. Les formes semblent défier la gravité, créant un dialogue entre le poids et la légèreté, le solide et le vide.",
-    imageUrl: 'https://images.unsplash.com/photo-1551628951-29f0c13c7f87?w=800&h=1000&fit=crop',
+      "Couverture pour une BD de science-fiction. Un voyageur solitaire face à l'immensité de l'espace, entre espoir et mélancolie.",
+    imageUrl: 'https://images.unsplash.com/photo-1635241161466-541f065683ba?w=800&h=1000&fit=crop',
     thumbnailUrl:
-      'https://images.unsplash.com/photo-1551628951-29f0c13c7f87?w=400&h=500&fit=crop',
-    year: 2024,
-    dimensions: '60x40x25 cm',
-    materials: ['Bronze patiné'],
+      'https://images.unsplash.com/photo-1635241161466-541f065683ba?w=400&h=500&fit=crop',
+    year: 2023,
+    dimensions: 'A4',
+    materials: ['Digital painting', 'Photoshop'],
     featured: true,
   },
   {
     id: '8',
-    title: 'Le Voyageur Stellaire',
-    category: 'character-design',
+    title: 'Mémoires d\'Enfance - Strip',
+    category: 'comic',
     description:
-      "Explorateur d'univers lointains, ce personnage combine science-fiction et éléments organiques. Conçu pour une aventure narrative où la découverte et l'émerveillement sont au cœur du récit.",
-    imageUrl: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1000&fit=crop',
+      "Strip humoristique inspiré de souvenirs d'enfance. Un style léger et expressif qui capture les petits moments du quotidien avec tendresse.",
+    imageUrl: 'https://images.unsplash.com/photo-1611250282021-10f90d878e65?w=800&h=1000&fit=crop',
     thumbnailUrl:
-      'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=400&h=500&fit=crop',
+      'https://images.unsplash.com/photo-1611250282021-10f90d878e65?w=400&h=500&fit=crop',
     year: 2024,
-    dimensions: 'Digital',
-    materials: ['Photoshop', 'Illustration numérique'],
+    dimensions: '30x10 cm',
+    materials: ['Encre', 'Aquarelle'],
+    featured: false,
+  },
+
+  // Tatouage
+  {
+    id: '9',
+    title: 'Serpent Cosmique',
+    category: 'tattoo',
+    description:
+      "Design de tatouage inspiré de la mythologie orientale. Le serpent s'enroule autour de motifs géométriques et célestes, symbolisant la transformation et l'infini.",
+    imageUrl: 'https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?w=800&h=1000&fit=crop',
+    thumbnailUrl:
+      'https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?w=400&h=500&fit=crop',
+    year: 2024,
+    dimensions: 'Avant-bras',
+    materials: ['Encre noire', 'Ombrages'],
+    featured: true,
+  },
+  {
+    id: '10',
+    title: 'Fleur de Lotus Mandala',
+    category: 'tattoo',
+    description:
+      "Mandala détaillé centré sur une fleur de lotus. Design qui combine spiritualité et esthétique géométrique, représentant l'équilibre et la renaissance.",
+    imageUrl: 'https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?w=800&h=1000&fit=crop',
+    thumbnailUrl:
+      'https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?w=400&h=500&fit=crop',
+    year: 2024,
+    dimensions: 'Dos',
+    materials: ['Encre noire', 'Dotwork'],
+    featured: true,
+  },
+  {
+    id: '11',
+    title: 'Lune et Phases',
+    category: 'tattoo',
+    description:
+      "Design minimaliste représentant les phases lunaires. Un tatouage délicat qui évoque les cycles naturels et le temps qui passe.",
+    imageUrl: 'https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=800&h=1000&fit=crop',
+    thumbnailUrl:
+      'https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=400&h=500&fit=crop',
+    year: 2024,
+    dimensions: 'Poignet / Clavicule',
+    materials: ['Fineline', 'Encre noire'],
+    featured: true,
+  },
+  {
+    id: '12',
+    title: 'Phoenix Renaissant',
+    category: 'tattoo',
+    description:
+      "Phoenix stylisé dans un style néo-traditionnel. Les flammes et les plumes s'entremêlent dans une composition dynamique symbolisant la renaissance et la résilience.",
+    imageUrl: 'https://images.unsplash.com/photo-1590246814883-57c511ea349f?w=800&h=1000&fit=crop',
+    thumbnailUrl:
+      'https://images.unsplash.com/photo-1590246814883-57c511ea349f?w=400&h=500&fit=crop',
+    year: 2023,
+    dimensions: 'Cuisse / Épaule',
+    materials: ['Encre couleur', 'Ombrages traditionnels'],
     featured: false,
   },
 ]
